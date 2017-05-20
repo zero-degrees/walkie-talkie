@@ -1,6 +1,16 @@
+/**
+ * Walkie Talkie
+ * https://github.com/zero-degrees/walkie-talkie
+ *
+ * @copyright 2017 Craig Russell
+ * @license MIT
+ */
+
 //NOTE: IE is not fully supported due its buggy flexbox implementation.
 
 (function ($) {
+	'use strict';
+
 	/**
 	 * Start the walkthrough.
 	 *
