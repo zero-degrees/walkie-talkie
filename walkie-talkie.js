@@ -161,7 +161,7 @@
 				focus, focusOffset, focusComputedStyles, focusTop, focusLeft, scrollX, scrollY, isFixed,
 				shadeWidth, shadeHeight, shadeFocusLeft, shadeFocusRight, shadeFocusTop, shadeFocusBottom;
 
-			if($('#walkthrough:visible').length == 0) {
+			if($('#walkthrough:visible').length === 0) {
 				return;
 			}
 
@@ -172,7 +172,7 @@
 			}
 			else {
 				focus = $(step.focus);
-				if(focus.length == 0) {
+				if(focus.length === 0) {
 					console.error('Invalid focus element selector on step ' + this.stepId);
 				}
 				else {
@@ -218,7 +218,7 @@
 			$('#walkthrough-message-body').html(this.steps[this.stepId].message);
 			$('#walkthrough').removeClass('walkthrough-first-step');
 			$('#walkthrough').removeClass('walkthrough-last-step');
-			if(this.stepId == 0) {
+			if(this.stepId === 0) {
 				$('#walkthrough').addClass('walkthrough-first-step');
 			}
 			if(this.stepId == this.steps.length - 1) {
