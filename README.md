@@ -20,11 +20,12 @@ Include the files after jQuery.
 ```javascript
 $().walkieTalkie([
 	{
-		focus: 'div:eq(0)',		//optional jQuery selector that is used to highlight an element on the screen
+		focus: 'div:eq(0)',		//optional jQuery selector to highlight an element
 		message: 'This is the first slide.',		//the step's text
 		callbacks: {
 			next: function () {
-				//This callback fires when the user goes to the next slide. Perform setup/teardown here.
+				//This callback fires when the user goes to the next slide.
+				//Perform setup/teardown here.
 			}
 		}
 	}
@@ -33,7 +34,8 @@ $().walkieTalkie([
 		message: 'This is the last slide.',
 		callbacks: {
 			prev: function () {
-				//This callback fires when the user goes to the previous slide. Perform setup/teardown here.
+				//This callback fires when the user goes to the previous slide.
+				//Perform setup/teardown here.
 			}
 		}
 	}
