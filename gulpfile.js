@@ -12,9 +12,9 @@ var gulp = require('gulp'),
 	uglify = require('gulp-uglify'),
 	jshint = require('gulp-jshint'),
 	stylish = require('jshint-stylish'),
-    sass = require('gulp-sass'),
-    autoprefixer = require('gulp-autoprefixer'),
-    cleanCss = require('gulp-clean-css'),
+	sass = require('gulp-sass'),
+	autoprefixer = require('gulp-autoprefixer'),
+	cleanCss = require('gulp-clean-css'),
 	concat = require('gulp-concat');
 
 var input = {
@@ -42,10 +42,10 @@ gulp.task('js', ['jshint'], function() {
 });
 
 gulp.task('sass', function() {
-    return gulp.src(input.styles)
-        .pipe(sass())
-        .pipe(autoprefixer())
-        .pipe(cleanCss())
+	return gulp.src(input.styles)
+		.pipe(sass())
+		.pipe(autoprefixer())
+		.pipe(cleanCss())
 		.pipe(concat(output.styles))
 		.pipe(gulp.dest('./'));
 });

@@ -159,7 +159,8 @@
 				walkthroughFocus = $('#walkthrough-focus'),
 				step = this.steps[this.stepId],
 				focus, focusOffset, focusComputedStyles, focusTop, focusLeft, scrollX, scrollY, isFixed,
-				shadeWidth, shadeHeight, shadeFocusLeft, shadeFocusRight, shadeFocusTop, shadeFocusBottom;
+				shadeWidth, shadeHeight, shadeFocusLeft, shadeFocusRight, shadeFocusTop, shadeFocusBottom,
+				needToScroll;
 
 			if($('#walkthrough:visible').length === 0) {
 				return;
@@ -168,7 +169,10 @@
 			this.showMessage();
 
 			if(typeof step.focus == 'undefined' || !step.focus) {
-				walkthroughFocus.hide();
+				walkthroughFocus.removeClass('walkthrough-focused');
+				walkthroughFocus.height(0).width(0);
+				$('#walkthrough-shade-left').width(0);
+				$('#walkthrough-shade-top').height(0);
 			}
 			else {
 				focus = $(step.focus);
@@ -176,7 +180,7 @@
 					console.error('Invalid focus element selector on step ' + this.stepId);
 				}
 				else {
-					walkthroughFocus.show();
+					walkthroughFocus.addClass('walkthrough-focused');
 					needToScroll = focus.css('position') != 'fixed';
 					if(needToScroll) {
 						this.scrollToElement(focus);
@@ -201,8 +205,6 @@
 					walkthroughFocus.width(shadeFocusRight - shadeFocusLeft);
 					$('#walkthrough-shade-left').width(focusLeft - padding);
 					$('#walkthrough-shade-top').height(focusTop - padding);
-
-					walkthroughFocus.show();
 				}
 			}
 		};
