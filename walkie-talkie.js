@@ -31,7 +31,6 @@
 			self.stepId = -1;
 
 			$('#walkthrough').remove();
-			$('body').css('overflowY', 'hidden');
 			$('body').append('<div id="walkthrough"></div>');
 			$('body').append('<div id="walkthrough-shade"></div>');
 			$('#walkthrough-shade').append('<div id="walkthrough-shade-left"></div>');
@@ -83,7 +82,6 @@
 		 */
 		this.close = function () {
 			$('#walkthrough, #walkthrough-shade').fadeOut(100, function () {
-				$('body').css('overflowY', 'initial');
 				$('#walkthrough, #walkthrough-shade').remove();
 			});
 		};
